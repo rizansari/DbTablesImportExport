@@ -126,6 +126,10 @@ namespace DbTablesImportExport
 
                                 string insertQuery = insertQuery1.ToString() + " " + insertQuery2.ToString();
 
+                                if (firstUpdate1)
+                                {
+                                    updateQuery1.Append(string.Format("[{0}] = N'{1}'", row.Keys.First(), row[row.Keys.First()]));
+                                }
                                 string updateQuery = updateQuery1.ToString() + " " + updateQuery2.ToString();
 
                                 //Console.WriteLine(insertQuery);

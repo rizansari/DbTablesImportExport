@@ -10,14 +10,14 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>http://rizwanansari.net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/rizansari/DbTablesImportExport</RepositoryUrl>
-    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <PackageReleaseNotes>bug fix when all fields are pk fields</PackageReleaseNotes>
     <PackageTags>Database Import Export, Configuration Import Export, Json Export Import</PackageTags>
     <PackageId>DbImportExport</PackageId>
     <Product>DbImportExport</Product>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">

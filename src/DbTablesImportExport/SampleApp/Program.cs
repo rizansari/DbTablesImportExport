@@ -19,7 +19,7 @@ namespace SampleApp
             {
                 ConnectionString = "",
                 DatabaseProvider = "System.Data.SqlClient",
-                Source = @"D:\temp\backup.bak",
+                Source = @"D:\temp\db\backup.bak",
                 IdentityInsert = true,
                 Overwrite = true
             };
@@ -33,8 +33,8 @@ namespace SampleApp
             {
                 ConnectionString = "",
                 DatabaseProvider = "System.Data.SqlClient",
-                Destination = @"D:\temp\backup.bak",
-                TableNames = (new string[] { "" }).ToList()
+                Destination = @"D:\temp\db\backup.bak",
+                TableNames = (new string[] { "ALARM_TYPE_LIST" }).ToList()
             };
             var export = new Export(config);
             export.ExportToFile();
