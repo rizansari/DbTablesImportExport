@@ -34,7 +34,7 @@ namespace SampleApp
                 ConnectionString = "",
                 DatabaseProvider = "System.Data.SqlClient",
                 Destination = @"D:\temp\db\backup.bak",
-                TableNames = (new string[] { "ALARM_TYPE_LIST" }).ToList()
+                TableNames = (new string[] { "TABLE1" }).ToList()
             };
             var export = new Export(config);
             export.ExportToFile();

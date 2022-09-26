@@ -344,3 +344,5 @@ config.json
 log4net.config
 
 *.orig
+
+*.ign

@@ -90,7 +90,16 @@ namespace DbTablesImportExport
                                     }
 
                                     insertQuery1.Append(string.Format("[{0}]", field));
-                                    insertQuery2.Append(string.Format(" N'{0}'", row[field]));
+
+                                    if (row[field] == null)
+                                    {
+                                        insertQuery2.Append(string.Format("null"));
+                                    }
+                                    else
+                                    {
+                                        insertQuery2.Append(string.Format(" N'{0}'", row[field].ToString().Replace("'", "''")));
+                                    }
+                                    
 
 
                                     if (pks.Contains(field))
@@ -103,7 +112,15 @@ namespace DbTablesImportExport
                                         {
                                             updateQuery2.Append(" and ");
                                         }
-                                        updateQuery2.Append(string.Format("[{0}] = '{1}'", field, row[field]));
+
+                                        if (row[field] == null)
+                                        {
+                                            updateQuery2.Append(string.Format("[{0}] = null", field));
+                                        }
+                                        else
+                                        {
+                                            updateQuery2.Append(string.Format("[{0}] = '{1}'", field, row[field].ToString().Replace("'", "''")));
+                                        }
                                     }
                                     else
                                     {
@@ -115,7 +132,15 @@ namespace DbTablesImportExport
                                         {
                                             updateQuery1.Append(", ");
                                         }
-                                        updateQuery1.Append(string.Format("[{0}] = N'{1}'", field, row[field]));
+
+                                        if (row[field] == null)
+                                        {
+                                            updateQuery1.Append(string.Format("[{0}] = null", field));
+                                        }    
+                                        else
+                                        {
+                                            updateQuery1.Append(string.Format("[{0}] = N'{1}'", field, row[field].ToString().Replace("'", "''")));
+                                        }
                                     }
                                 }
 
